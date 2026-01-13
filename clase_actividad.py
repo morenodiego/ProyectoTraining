@@ -17,8 +17,8 @@ class Cilcismo (Actividad):
         self.altmax=altmax
         self.altmin=altmin
     def calculardesnivel(self, altmax, altmin):
-        self.desnivel=altmax-altmin
-        return self.desnivel
+        res = altmax-altmin
+        return res 
 
 class Gimnasio (Actividad): 
     def __init__(self, tipo, duracion, hora,entreno):
