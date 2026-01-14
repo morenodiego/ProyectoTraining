@@ -17,4 +17,17 @@ def registrar():
 
     print("Usuario registrado correctamente")
 
-registrar()Diego
+
+def iniciar_sesion(): 
+    usuario = input("Dime tu nombre de usuario: ")
+    contraseña = input("Ponga su contraseña: ")
+
+
+    with open("usuarios.txt", "r") as archivo:
+        for linea in archivo: 
+            nombre_guardado = linea.split(":")[0] 
+            contra = linea.split(":")[1] 
+            if nombre_guardado == usuario and contra == contraseña: 
+                return True 
+            else: 
+                return False
