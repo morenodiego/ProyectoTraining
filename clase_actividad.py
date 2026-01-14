@@ -24,5 +24,4 @@ class Gimnasio (Actividad):
     def __init__(self, tipo, duracion, hora,entreno):
         super().__init__(tipo, duracion, hora)
         self.entreno = entreno
-
     
