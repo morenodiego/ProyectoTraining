@@ -1,2 +1,0 @@
-Diego,Ciclismo
-Diego,ciclismo& C:/Users/Usuario/AppData/Local/Microsoft/WindowsApps/python3.13.exe c:/Users/Usuario/Desktop/ProyectoTraining/programa.py
