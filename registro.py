@@ -5,7 +5,7 @@ def registrar():
     # Primero revisamos si el usuario ya existe
     with open("usuarios.txt", "r") as archivo:
         for linea in archivo: 
-            nombre_guardado = linea.split(":")[0] 
+            nombre_guardado = linea.split(":")[0].strip() 
             while nombre_guardado == usuario:
                 print("Ese usuario ya existe")
                 registrar()
@@ -25,9 +25,8 @@ def iniciar_sesion():
 
     with open("usuarios.txt", "r") as archivo:
         for linea in archivo: 
-            nombre_guardado = linea.split(":")[0] 
-            contra = linea.split(":")[1] 
+            nombre_guardado = linea.split(":")[0].strip() 
+            contra = linea.split(":")[1].strip() 
             if nombre_guardado == usuario and contra == contraseña: 
                 return usuario 
-            else: 
-                return ""
+    return ""
