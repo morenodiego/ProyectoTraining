@@ -1,3 +1,5 @@
+from clase_actividad import Actividad
+
 class Player(Actividad):
     def __init__(self, usuario, nivel):
         self.usuario=usuario
