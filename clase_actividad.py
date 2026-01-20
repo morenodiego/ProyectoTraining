@@ -10,7 +10,7 @@ class Correr (Actividad):
         self.distancia = distancia
 
 
-class Cilcismo (Actividad): 
+class Ciclismo (Actividad): 
     def __init__(self, tipo, duracion, hora,distancia,altmax,altmin):
         super().__init__(tipo, duracion, hora)
         self.distancia = distancia 

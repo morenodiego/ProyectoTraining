@@ -28,6 +28,6 @@ def iniciar_sesion():
             nombre_guardado = linea.split(":")[0] 
             contra = linea.split(":")[1] 
             if nombre_guardado == usuario and contra == contraseña: 
-                return True 
+                return usuario 
             else: 
-                return False
+                return ""
