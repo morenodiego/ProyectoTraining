@@ -8,6 +8,7 @@ def crear_metrica():
 
 def guardar_metrica(metrica):
     with open("mediasmetrica.txt", "a") as archivo:
+     
         
 datos()
 
