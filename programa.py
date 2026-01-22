@@ -1,5 +1,6 @@
 from registro import registrar,iniciar_sesion
-from historico import *
+from historico import Historico
+from clase_actividad import Ciclismo, Correr, Gimnasio, Actividad
 
 print("Bienvenido")
 
@@ -21,9 +22,14 @@ menu_actividad = int(input
 "3.Gimnasio\n"\
 ": "))
 
+historico = Historico(usuario)
 
 if menu_actividad == 1: 
-    Ciclismo.pedir_datos()
+    act = Ciclismo(1.30, "2-1-25",125,700,200)
+    historico.registrar_actividad(act)
 
 elif menu_actividad == 2: 
-    Correr.pedir_datos()
+    pass
+
+
+historico.guardad_datos()
