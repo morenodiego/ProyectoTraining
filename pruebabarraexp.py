@@ -10,7 +10,7 @@ def barra_exp(exp_actual, exp_max, longitud=175):
     barra = "█" * llenos + "░" * vacios
 
     # Mostrar barra con porcentaje
-    return f"[{barra}] {porcentaje*100:.1f}%"
+    return f"[{barra}] {porcentaje*100:.0f} %"
 
 # Ejemplo de uso
 exp_actual = 50
