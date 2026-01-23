@@ -19,15 +19,14 @@ class Ciclismo (Actividad):
         self.distancia = distancia 
         self.altmax=altmax
         self.altmin=altmin
+        self.desnivel = altmax - altmin
 
-    def calculardesnivel(self, altmax, altmin):
-        res = altmax-altmin
-        self.desnivel = res  
 
     def registar(self):
         self.desnivel = self.desnivel
         self.duracion = int(input("Cuántos minutos has estado pedaleando?: "))
-        self.distancia = float(input("Cuantos Km has recorrido?: "))        
+        self.distancia = float(input("Cuantos Km has recorrido?: "))
+
 
 
 class Gimnasio (Actividad): 
