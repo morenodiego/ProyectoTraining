@@ -22,10 +22,10 @@ class Historico:
                     fichero.write(f"{self.nombre} ha hecho ciclismo:{actividad.duracion} minutos, {actividad.distancia} distancia,{actividad.desnivel}desnivel.\n")
 
                 elif type(actividad) == Correr:
-                    fichero.write(f"{actividad.duracion} minutos, {actividad.distancia} distancia.\n")
+                    fichero.write(f"{self.nombre} ha hecho correr:{actividad.duracion} minutos, {actividad.distancia} distancia.\n")
 
                 elif type(actividad) == Gimnasio: 
-                    fichero.write(f"{actividad.desnivel}desnivel,{actividad.duracion} minutos, {actividad.distancia} distancia.\n")
+                    fichero.write(f"{self.nombre} ha hecho gimnasio:{actividad.desnivel}desnivel,{actividad.duracion} minutos, {actividad.distancia} distancia.\n")
 
 
 
