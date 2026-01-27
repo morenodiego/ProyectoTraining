@@ -1,1 +1,1 @@
-Diego:1.3 minutos, 125 distancia,500desnivel.
+Diego ha hecho ciclismo:30.066666666666666 minutos, 123.0 distancia,350desnivel.
