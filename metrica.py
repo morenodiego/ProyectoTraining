@@ -7,3 +7,6 @@ class Metrica:
     def calcular_imc(self):
         imc = self.peso / (self.altura ** 2)
         return imc
+
+    def guardar_datos(self):
+        

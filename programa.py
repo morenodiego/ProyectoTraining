@@ -6,6 +6,7 @@ print("Bienvenido")
 
 menu_inicial = int(input("1.Registrarte\n" \
 "2. iniciar sesion\n"\
+"3. Editar metrica\n"\
 ": " ))
 
 if menu_inicial == 1: 
