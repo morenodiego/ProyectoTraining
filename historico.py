@@ -14,12 +14,18 @@ class Historico:
         elif actividad == Gimnasio:
             pass
 
+
+    def cargar_datos(self): 
+        with open("actividades.txt", "r") as fichero:
+
+
+
     def guardad_datos(self): 
 
         with open("actividades.txt", "w") as fichero:
             for actividad in self.actividades:
                 if type(actividad) == Ciclismo:
-                    fichero.write(f"{self.nombre} ha hecho ciclismo:{actividad.duracion} minutos, {actividad.distancia} distancia,{actividad.desnivel}desnivel.\n")
+                    fichero.write(f"{self.nombre}:ciclismo:{actividad.duracion}:{actividad.distancia}:{actividad.desnivel}\n")
 
                 elif type(actividad) == Correr:
                     fichero.write(f"{self.nombre} ha hecho correr:{actividad.duracion} minutos, {actividad.distancia} distancia.\n")
@@ -27,6 +33,3 @@ class Historico:
                 elif type(actividad) == Gimnasio: 
                     fichero.write(f"{self.nombre} ha hecho gimnasio:{actividad.desnivel}desnivel,{actividad.duracion} minutos, {actividad.distancia} distancia.\n")
 
-
-
-             

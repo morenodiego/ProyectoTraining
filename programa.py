@@ -26,7 +26,13 @@ menu_actividad = int(input
 historico = Historico(usuario)
 
 if menu_actividad == 1: 
-    act = Ciclismo(1.30, "2-1-25",125,700,200)
+    hora = int(input("Cuando horas enteras has entrenado : "))
+    min = int(input("y cuantos mimnutos: "))
+    dur = hora/60 + min
+    dist = float(input("Cuantos kilometros enteros: "))
+    altmax = int(input("Cuanto ha sido la altmura maxima: "))
+    altmin = int(input("Y la minima: "))
+    act = Ciclismo(dur, "2-1-25",dist,altmax,altmin)
     historico.registrar_actividad(act)
 
 elif menu_actividad == 2: 
