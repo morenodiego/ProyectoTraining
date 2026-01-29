@@ -19,3 +19,7 @@ def guardar_metrica(peso, altura, edad, imc):
     print("Datos guardados correctamente")
 
 crear_metrica()
+
+metrica = Metrica(peso, altura, edad)
+jugador.incluir_metrica(metrica)
+metrica.guardar_datos()
