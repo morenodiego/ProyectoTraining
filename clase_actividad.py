@@ -4,9 +4,10 @@ class Actividad:
         self.hora = hora
 
 class Correr (Actividad): 
-    def __init__(self, tipo, duracion, hora,distancia):
-        super().__init__(tipo, duracion, hora)
+    def __init__(self, duracion, hora,distancia):
+        super().__init__(duracion, hora)
         self.distancia = distancia
+         
 
     def registar(self): 
         self.duracion = int(input("Cuántos minutos has estado corriendo?: "))
@@ -30,7 +31,7 @@ class Ciclismo (Actividad):
 
 
 class Gimnasio (Actividad): 
-    def __init__(self, tipo, duracion, hora,entreno):
-        super().__init__(tipo, duracion, hora)
+    def __init__(self, duracion, hora,entreno):
+        super().__init__(duracion, hora)
         self.entreno = entreno
     
