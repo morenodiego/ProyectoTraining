@@ -33,5 +33,12 @@ class Ciclismo (Actividad):
 class Gimnasio (Actividad): 
     def __init__(self, duracion, hora,entreno):
         super().__init__(duracion, hora)
-        self.entreno = entreno
+        self.entreno = {}
     
+    def entrenamineto(self):
+        menu = int(input("1. Añadir un nuevo ejercicio\n"  "2. Salir \n : "))
+        while menu == 1: 
+            ejercicio = input("Cual es el ejercicio que has hecho")
+            series = input("Cuantas series ")
+        
+

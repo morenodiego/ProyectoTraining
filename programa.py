@@ -43,6 +43,12 @@ elif menu_actividad == 2:
     act =Correr(dur,"2-1-25", dist)
     historico.registrar_actividad(act)
 
+elif menu_actividad == 3: 
+    hora = int(input("Cuando horas enteras has entrenado : "))
+    min = int(input("y cuantos mimnutos: "))
+    dur = hora/60 + min
+    
+
 
 
 historico.guardad_datos()
