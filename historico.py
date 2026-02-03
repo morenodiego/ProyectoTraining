@@ -19,16 +19,19 @@ class Historico:
             self.actividades.append(actividad)
 
 
-    def cargar_datos(self): 
+    def cargar_datos(self):
         with open("actividades.txt", "r") as fichero: 
             for linea in fichero:
                 if linea.split(":")[1].strip() ==  "ciclismo": 
                     cont = 0
-                    while cont == 4: 
-                        self.actividades.append(linea.split(":")[cont].strip())
+                    while cont == 4:
+                        linea.split(":")[cont].strip()
+                        
+                        
+                        
                         cont += 1
-
-                    
+                    actividad = Actividad()
+                    self.actividades.append(actividad)
 
 
      
