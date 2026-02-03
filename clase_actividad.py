@@ -40,5 +40,9 @@ class Gimnasio (Actividad):
         while menu == 1: 
             ejercicio = input("Cual es el ejercicio que has hecho")
             series = input("Cuantas series ")
+            self.entreno[ejercicio] = series 
+        else: 
+            pass 
+        
         
 
