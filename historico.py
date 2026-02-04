@@ -23,15 +23,21 @@ class Historico:
         with open("actividades.txt", "r") as fichero: 
             for linea in fichero:
                 if linea.split(":")[1].strip() ==  "ciclismo": 
-                    cont = 0
-                    while cont == 4:
-                        linea.split(":")[cont].strip()
-                        
-                        
-                        
-                        cont += 1
-                    actividad = Actividad()
-                    self.actividades.append(actividad)
+                    nombre = linea.split(":")[0].strip()
+                    duracion = linea.split(":")[2].strip()
+                    distancia = linea.split(":")[3].strip()
+                    desnivel = linea.split(":")[4].strip()    
+                    act = Ciclismo(duracion, "2-1-25",distancia,desnivel)
+                    Historico.registrar_actividad(act)
+                
+                elif linea.split(":")[1].strip() =="correr": 
+                    nombre = linea.split(":")[0].strip()
+                    duracion = linea.split(":")[2].strip()
+                    distancia = linea.split(":")[3].strip()
+                     
+                    act = Correr(duracion, "2-1-25",distancia)
+                    Historico.registrar_actividad(act)
+                
 
 
      
