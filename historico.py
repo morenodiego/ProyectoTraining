@@ -28,7 +28,7 @@ class Historico:
                     distancia = linea.split(":")[3].strip()
                     desnivel = linea.split(":")[4].strip()    
                     act = Ciclismo(duracion, "2-1-25",distancia,desnivel)
-                    Historico.registrar_actividad(act)
+                    self.registrar_actividad(act)
                 
                 elif linea.split(":")[1].strip() =="correr": 
                     nombre = linea.split(":")[0].strip()
@@ -36,7 +36,7 @@ class Historico:
                     distancia = linea.split(":")[3].strip()
                      
                     act = Correr(duracion, "2-1-25",distancia)
-                    Historico.registrar_actividad(act)
+                    self.registrar_actividad(act)
                 
 
 
