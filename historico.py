@@ -50,8 +50,7 @@ class Historico:
 
     def guardad_datos(self):
         filename = "actividades_"+self.nombre+".txt"
-        if os.path.exists(filename):
-            os.remove(filename)
+
         with open(filename, "a") as fichero:
 
             for actividad in self.actividades:
