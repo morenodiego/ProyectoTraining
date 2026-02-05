@@ -18,6 +18,7 @@ if menu_inicial == 2:
         exit()
 if menu_inicial == 3:
     
+    
 
 #ERROR QUE GUARDA SOL UN USARIO LAS ACTIVIDADES, SI REGISTRAS UNA CON UN USARIO TODAS SE CAMBIAN 
 
