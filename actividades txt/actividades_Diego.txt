@@ -1,0 +1,5 @@
+Diego:correr:34.06666666666667:57.0
+Diego:ciclismo:5.083333333333333:5.0:-1
+Diego:correr:4.05:3.0
+Diego:correr:5.066666666666666:87.0
+Diego:correr:67.08333333333333:5.0

@@ -20,7 +20,10 @@ class Historico:
 
 
     def cargar_datos(self):
-        with open("actividades.txt", "r") as fichero: 
+        filename = "actividades_"+self.nombre+".txt"
+        if not os.path.exists(filename):
+            return 
+        with open(filename, "r") as fichero: 
             for linea in fichero:
                 if linea.split(":")[1].strip() ==  "ciclismo": 
                     nombre = linea.split(":")[0].strip()
@@ -46,7 +49,7 @@ class Historico:
 
 
     def guardad_datos(self):
-        filename = "actividades.txt"
+        filename = "actividades_"+self.nombre+".txt"
         if os.path.exists(filename):
             os.remove(filename)
         with open(filename, "a") as fichero:
