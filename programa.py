@@ -19,13 +19,16 @@ if menu_inicial == 2:
 if menu_inicial == 3:
     
 
+#ERROR QUE GUARDA SOL UN USARIO LAS ACTIVIDADES, SI REGISTRAS UNA CON UN USARIO TODAS SE CAMBIAN 
+
+historico = Historico(usuario)
+historico.cargar_datos()
+
 menu_actividad = int(input
 ("1.Ciclismo\n" \
 "2.Correr\n"\
 "3.Gimnasio\n"\
 ": "))
-
-historico = Historico(usuario)
 
 if menu_actividad == 1: 
     hora = int(input("Cuando horas enteras has entrenado : "))
@@ -34,7 +37,8 @@ if menu_actividad == 1:
     dist = float(input("Cuantos kilometros enteros: "))
     altmax = int(input("Cuanto ha sido la altmura maxima: "))
     altmin = int(input("Y la minima: "))
-    act = Ciclismo(dur, "2-1-25",dist,altmax,altmin)
+    desnivel = altmax - altmin
+    act = Ciclismo(dur, "2-1-25",dist,desnivel)
     historico.registrar_actividad(act)
 
 elif menu_actividad == 2: 

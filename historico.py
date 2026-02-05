@@ -10,13 +10,36 @@ class Historico:
         if type(actividad) == Ciclismo:
             
             self.actividades.append(actividad)
+        elif type(actividad) == Correr:
+            
+            self.actividades.append(actividad)
+
 
         elif actividad == Gimnasio:
-            pass
+            self.actividades.append(actividad)
 
 
-    def cargar_datos(self): 
-        pass
+    def cargar_datos(self):
+        with open("actividades.txt", "r") as fichero: 
+            for linea in fichero:
+                if linea.split(":")[1].strip() ==  "ciclismo": 
+                    nombre = linea.split(":")[0].strip()
+                    duracion = linea.split(":")[2].strip()
+                    distancia = linea.split(":")[3].strip()
+                    desnivel = linea.split(":")[4].strip()    
+                    act = Ciclismo(duracion, "2-1-25",distancia,desnivel)
+                    self.registrar_actividad(act)
+                
+                elif linea.split(":")[1].strip() =="correr": 
+                    nombre = linea.split(":")[0].strip()
+                    duracion = linea.split(":")[2].strip()
+                    distancia = linea.split(":")[3].strip()
+                     
+                    act = Correr(duracion, "2-1-25",distancia)
+                    self.registrar_actividad(act)
+                
+
+
      
            
 

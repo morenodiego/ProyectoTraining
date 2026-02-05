@@ -15,12 +15,10 @@ class Correr (Actividad):
         
 
 class Ciclismo (Actividad): 
-    def __init__(self, duracion, hora,distancia,altmax,altmin):
+    def __init__(self, duracion, hora,distancia,desnivel):
         super().__init__(duracion, hora)
         self.distancia = distancia 
-        self.altmax=altmax
-        self.altmin=altmin
-        self.desnivel = altmax - altmin
+        self.desnivel = desnivel
 
 
     def registar(self):
@@ -40,5 +38,9 @@ class Gimnasio (Actividad):
         while menu == 1: 
             ejercicio = input("Cual es el ejercicio que has hecho")
             series = input("Cuantas series ")
+            self.entreno[ejercicio] = series 
+        else: 
+            pass 
+        
         
 
