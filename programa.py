@@ -11,12 +11,18 @@ menu_inicial = int(input("1.Registrarte\n" \
 
 if menu_inicial == 1: 
     registrar()
+    menu_inicial = int(input("1.Registrarte\n" \
+    "2. iniciar sesion\n"\
+    "3. Editar metrica\n"\
+    ": " ))
+
 if menu_inicial == 2: 
     usuario = iniciar_sesion()
     if usuario == "":
         print("No existe un usuario así en nuestro sistema")
         exit()
 if menu_inicial == 3:
+    pass 
     
 
 #ERROR QUE GUARDA SOL UN USARIO LAS ACTIVIDADES, SI REGISTRAS UNA CON UN USARIO TODAS SE CAMBIAN 
