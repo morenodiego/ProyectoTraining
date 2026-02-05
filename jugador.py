@@ -16,7 +16,7 @@ class Jugador:
             contador += 1
         return contador
 
-    def barra_exp(self):
+    def barra_exp(self):                     
         longitud = 175
         porcentaje = self.exp / self.exp_max
         if porcentaje > 1:

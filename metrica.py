@@ -10,5 +10,7 @@ class Metrica:
 
     def guardar_datos(self):
         with open("medidasmetrica.txt", "a") as fichero:
-            fichero.write(f"{self.peso}:{self.altura}:{self.edad}:{self.calcular_imc}:\n")
+            fichero.write(f"{self.peso}:{self.altura}:{self.edad}:{self.calcular_imc()}:\n")
+
+
 
