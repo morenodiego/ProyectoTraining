@@ -23,7 +23,7 @@ class Historico:
             return 
         with open(filename, "r") as fichero: 
             for linea in fichero:
-                if linea.split(":")[1].strip() ==  "ciclismo": 
+                if linea.split(":")[1].strip() == "ciclismo": 
                     nombre = linea.split(":")[0].strip()
                     duracion = linea.split(":")[2].strip()
                     distancia = linea.split(":")[3].strip()
