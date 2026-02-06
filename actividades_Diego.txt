@@ -1,6 +1,0 @@
-Diego:correr:5.066666666666666:6.0
-Diego:correr:5.066666666666666:6.0
-Diego:correr:5.75:6.0
-Diego:correr:5.066666666666666:6.0
-Diego:correr:5.066666666666666:6.0
-Diego:correr:5.75:6.0

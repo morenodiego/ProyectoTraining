@@ -13,9 +13,7 @@ class Historico:
         elif type(actividad) == Correr:
             
             self.actividades.append(actividad)
-
-
-        elif actividad == Gimnasio:
+        elif type(actividad) == Gimnasio:
             self.actividades.append(actividad)
 
 
@@ -31,7 +29,7 @@ class Historico:
                     distancia = linea.split(":")[3].strip()
                     desnivel = linea.split(":")[4].strip()    
                     act = Ciclismo(duracion, "2-1-25",distancia,desnivel)
-                    self.registrar_actividad(act)
+                    self.actividades.append(act)
                 
                 elif linea.split(":")[1].strip() =="correr": 
                     nombre = linea.split(":")[0].strip()
@@ -39,7 +37,13 @@ class Historico:
                     distancia = linea.split(":")[3].strip()
                      
                     act = Correr(duracion, "2-1-25",distancia)
-                    self.registrar_actividad(act)
+                    self.actividades.append(act)
+                
+                elif linea.split(":")[1].strip() == "gimnasio":
+                    nombre = linea.split(":")[0].strip()
+                    duracion = linea.split(":")[2].strip()
+                    act = Gimnasio(duracion, "2-1-25")
+                    self.actividades.append(act)
                 
 
 
@@ -51,7 +55,7 @@ class Historico:
     def guardad_datos(self):
         filename = "actividades_"+self.nombre+".txt"
 
-        with open(filename, "a") as fichero:
+        with open(filename, "w") as fichero:
 
             for actividad in self.actividades:
                 if type(actividad) == Ciclismo:
@@ -61,5 +65,5 @@ class Historico:
                     fichero.write(f"{self.nombre}:correr:{actividad.duracion}:{actividad.distancia}\n")
 
                 elif type(actividad) == Gimnasio: 
-                    fichero.write(f"{self.nombre}:gimnasio:{actividad.entreno}\n")
+                    fichero.write(f"{self.nombre}:gimnasio:{actividad.duracion}:{str(actividad.entreno)}\n")
 

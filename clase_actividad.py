@@ -39,11 +39,11 @@ class Gimnasio (Actividad):
 
 
     
-    def entrenamineto(self):
+    def entrenamiento(self):
         menu = int(input("1. Añadir un nuevo ejercicio\n"  "2. Salir \n : "))
         while menu == 1: 
-            ejercicio = input("Cual es el ejercicio que has hecho")
-            series = input("Cuantas series ")
+            ejercicio = input("Cual es el ejercicio que has hecho: ")
+            series = input("Cuantas series: ")
             self.entreno[ejercicio] = series 
         
             menu = int(input("1. Añadir un nuevo ejercicio\n"  "2. Salir \n : "))
