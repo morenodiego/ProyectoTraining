@@ -39,7 +39,7 @@ menu_actividad = int(input
 if menu_actividad == 1: 
     hora = int(input("Cuando horas enteras has entrenado : "))
     min = int(input("y cuantos mimnutos: "))
-    dur = hora/60 + min
+    dur = hora*60 + min
     dist = float(input("Cuantos kilometros enteros: "))
     altmax = int(input("Cuanto ha sido la altmura maxima: "))
     altmin = int(input("Y la minima: "))
@@ -50,7 +50,7 @@ if menu_actividad == 1:
 elif menu_actividad == 2: 
     hora = int(input("Cuando horas enteras has entrenado : "))
     min = int(input("y cuantos mimnutos: "))
-    dur = hora/60 + min
+    dur = hora*60 + min
     dist = float(input("Cuantos kilometros enteros: "))
     act =Correr(dur,"2-1-25", dist)
     historico.registrar_actividad(act)
@@ -58,7 +58,7 @@ elif menu_actividad == 2:
 elif menu_actividad == 3: 
     hora = int(input("Cuando horas enteras has entrenado : "))
     min = int(input("y cuantos mimnutos: "))
-    dur = hora/60 + min
+    dur = hora*60 + min
     
     act = Gimnasio(dur, "2-1-25")  # Instancia con duración y hora
     act.entrenamiento()  # Llamar al método de entrenamiento
