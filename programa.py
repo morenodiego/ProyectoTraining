@@ -52,7 +52,7 @@ elif menu_actividad == 2:
     min = int(input("y cuantos mimnutos: "))
     dur = hora*60 + min
     dist = float(input("Cuantos kilometros enteros: "))
-    act =Correr(dur,"2-1-25", dist)
+    act = Correr(dur,"2-1-25", dist)
     historico.registrar_actividad(act)
 
 elif menu_actividad == 3: 
