@@ -60,6 +60,12 @@ elif menu_actividad == 3:
     min = int(input("y cuantos mimnutos: "))
     dur = hora/60 + min
     
+    act = Gimnasio(dur, "2-1-25")  # Instancia con duración y hora
+    act.entrenamineto()  # Llamar al método de entrenamiento
+    
+    historico.registrar_actividad(act)
+
+    
 
 
 
