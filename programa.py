@@ -24,6 +24,7 @@ if menu_inicial == 2:
 if menu_inicial == 3:
     pass 
     
+    
 
 #ERROR QUE GUARDA SOL UN USARIO LAS ACTIVIDADES, SI REGISTRAS UNA CON UN USARIO TODAS SE CAMBIAN 
 
