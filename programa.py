@@ -63,7 +63,9 @@ elif menu_actividad == 3:
     
     historico.registrar_actividad(act)
 elif menu_actividad == 4:
-    pass
+    peso = int(input("peso: "))
+    altura = int(input("altura cm : "))
+    edad = int(input("edad: "))
     
 
 

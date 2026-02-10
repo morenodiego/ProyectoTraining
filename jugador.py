@@ -34,12 +34,3 @@ class Jugador:
 
    
 
-#Ejemplo
-p = Jugador("Marcos", "perro", "dragon")
-print(p)
-p.ganar_exp(150)
-niveles_subidos = p.ganar_exp(300)
-if niveles_subidos > 0:
-    print(f"¡Has subido {niveles_subidos} niveles!")
-print(p.barra_exp())
-print(p)
