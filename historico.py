@@ -1,20 +1,34 @@
 from clase_actividad import Ciclismo, Correr, Gimnasio
+from jugador import Jugador
+from metrica import Metrica
 import os
 class Historico: 
     def __init__ (self,nombre): 
         self.nombre = nombre 
         self.actividades = []
+        self.jugadores = []
 
     def registrar_actividad(self, actividad):
         print(type(actividad))
         if type(actividad) == Ciclismo:
-            
+            Jugador.ganar_exp(50)
             self.actividades.append(actividad)
         elif type(actividad) == Correr:
-            
+            Jugador.ganar_exp(50)
             self.actividades.append(actividad)
         elif type(actividad) == Gimnasio:
+            Jugador.ganar_exp(50)
             self.actividades.append(actividad)
+        
+    def incluir_jugador(self, jugador):
+        for jugador_lista in self.jugadores:
+            if jugador_lista.usuario == jugador.usuario:
+                return False
+        
+        self.jugadores.append(jugador)
+        return True
+    
+    
 
 
     def cargar_datos(self):
@@ -71,7 +85,40 @@ class Historico:
 
     def guardar_jugadores(self):
         if os.path.exists("jugadores.txt"):
-            pass
-        with open("jugadores.txt", "a") as fichero:
+            os.remove("jugadores.txt")
+        with open("jugadores.txt", "w") as fichero:
             for jugador in self.jugadores:
-                fichero.write(f"{jugador.usuario}:{jugador.exp}:{jugador.nivel}:{jugador.avatar}:{jugador.mascota}\n")
+                fichero.write(f"{jugador.usuario}:{jugador.exp}:{jugador.nivel}:{jugador.avatar}:{jugador.mascota}:{jugador.metrica.peso}:{jugador.metrica.altura}:{jugador.metrica.edad}\n")
+
+
+class Jugador:
+    def __init__(self, usuario, avatar, mascota, peso, altura, edad):
+        self.usuario = usuario
+        self.exp = 0
+        self.exp_max=100
+        self.nivel = 1
+        self.avatar=avatar
+        self.mascota=mascota
+        self.metrica = Metrica(peso, altura, edad)
+
+    def ganar_exp(self, cantidad):
+        self.exp += cantidad
+        contador = 0
+        while self.exp >= self.exp_max:
+            self.exp -= self.exp_max
+            self.nivel += 1
+            contador += 1
+        return contador
+
+    def barra_exp(self):                     
+        longitud = 175
+        porcentaje = self.exp / self.exp_max
+        if porcentaje > 1:
+            porcentaje = 1
+        llenos = int(longitud * porcentaje)
+        vacios = longitud - llenos
+        barra = "█" * llenos + "░" * vacios
+        return f"Nivel {self.nivel} | {barra} {porcentaje*100:.1f}%"
+
+    def __str__(self):
+        return f"Usuario {self.usuario}, Nivel: {self.nivel}, EXP {self.exp}"

@@ -1,6 +1,7 @@
 from registro import registrar,iniciar_sesion
 from historico import Historico
 from clase_actividad import Ciclismo, Correr, Gimnasio, Actividad
+from jugador import Jugador
 
 print("Bienvenido")
 
