@@ -6,14 +6,12 @@ print("Bienvenido")
 
 menu_inicial = int(input("1.Registrarte\n" \
 "2. iniciar sesion\n"\
-"3. Editar metrica\n"\
 ": " ))
 
 if menu_inicial == 1: 
     registrar()
     menu_inicial = int(input("1.Registrarte\n" \
     "2.Iniciar sesion\n"\
-    "3.Editar metrica\n"\
     ": " ))
 
 if menu_inicial == 2: 
@@ -21,8 +19,7 @@ if menu_inicial == 2:
     if usuario == "":
         print("No existe un usuario así en nuestro sistema")
         exit()
-if menu_inicial == 3:
-    pass 
+
     
     
 
@@ -34,6 +31,7 @@ menu_actividad = int(input
 ("1.Ciclismo\n" \
 "2.Correr\n"\
 "3.Gimnasio\n"\
+"4.Editar métrica\n"\
 ": "))
 
 if menu_actividad == 1: 
@@ -64,6 +62,10 @@ elif menu_actividad == 3:
     act.entrenamiento()  # Llamar al método de entrenamiento
     
     historico.registrar_actividad(act)
+elif menu_actividad == 4:
+    pass
+    
+
 
     
 

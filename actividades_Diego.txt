@@ -1,2 +1,3 @@
 Diego:gimnasio:203:{}
 Diego:correr:1383:34.0
+Diego:correr:246:7.0
