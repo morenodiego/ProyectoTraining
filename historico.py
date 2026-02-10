@@ -67,3 +67,11 @@ class Historico:
                 elif type(actividad) == Gimnasio: 
                     fichero.write(f"{self.nombre}:gimnasio:{actividad.duracion}:{str(actividad.entreno)}\n")
 
+
+
+    def guardar_jugadores(self):
+        if os.path.exists("jugadores.txt"):
+            pass
+        with open("jugadores.txt", "a") as fichero:
+            for jugador in self.jugadores:
+                fichero.write(f"{jugador.usuario}:{jugador.exp}:{jugador.nivel}:{jugador.avatar}:{jugador.mascota}\n")
