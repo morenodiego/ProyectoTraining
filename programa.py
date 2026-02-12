@@ -45,8 +45,6 @@ if menu_actividad == 1:
     desnivel = altmax - altmin
     act = Ciclismo(dur, "2-1-25",dist,desnivel)
     historico.registrar_actividad(act)
-    Jugador.ganar_exp(50)
-    Jugador.barra_exp()
 
 elif menu_actividad == 2: 
     hora = int(input("Cuando horas enteras has entrenado : "))
@@ -68,8 +66,7 @@ elif menu_actividad == 3:
     act.entrenamiento()  # Llamar al método de entrenamiento
     
     historico.registrar_actividad(act)
-    Jugador.ganar_exp(50)
-    Jugador.barra_exp()
+
 elif menu_actividad == 4:
     peso = int(input("peso: "))
     altura = int(input("altura cm : "))
