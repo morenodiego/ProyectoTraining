@@ -15,13 +15,13 @@ class Historico:
     def registrar_actividad(self, actividad):
         print(type(actividad))
         if type(actividad) == Ciclismo:
-            Jugador.ganar_exp(50)
+            
             self.actividades.append(actividad)
         elif type(actividad) == Correr:
-            Jugador.ganar_exp(50)
+            
             self.actividades.append(actividad)
         elif type(actividad) == Gimnasio:
-            Jugador.ganar_exp(50)
+            
             self.actividades.append(actividad)
 
 
@@ -100,6 +100,25 @@ class Historico:
             fichero.write(f"{self.nombre}{self.peso}:{self.altura}:{self.edad}:\n")
 
 
+    def cargar_jugador(self, usuario):
+        filename = "jugadores.txt"
+        if not os.path.exists(filename):
+            return 
+        with open(filename, "r") as fichero:
+            for linea in fichero:
+                nombre = linea.split(":")[0]
+                if nombre == usuario:
+                    experiencia = linea.split(":")[1]
+                    nivel = linea.split(":")[2]
+                    avatar = linea.split(":")[3]
+                    mascota = linea.split(":")[4]
+                    peso = linea.split(":")[5]
+                    altura = linea.split(":")[6]
+                    edad = linea.split(":")[7]
+                    jugador = Jugador(nombre, experiencia, nivel, avatar, mascota, peso, altura, edad)
+                    return jugador
+        
+            return None
 
 
     def guardar_jugadores(self):

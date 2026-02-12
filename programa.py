@@ -20,13 +20,11 @@ if menu_inicial == 2:
     if usuario == "":
         print("No existe un usuario así en nuestro sistema")
         exit()
+    historico = Historico(usuario)
+    historico.cargar_datos()
+    jugador = historico.cargar_jugador(usuario)
 
-    
-    
 
-
-historico = Historico(usuario)
-historico.cargar_datos()
 
 menu_actividad = int(input
 ("1.Ciclismo\n" \
@@ -45,8 +43,7 @@ if menu_actividad == 1:
     desnivel = altmax - altmin
     act = Ciclismo(dur, "2-1-25",dist,desnivel)
     historico.registrar_actividad(act)
-    Jugador.ganar_exp(50)
-    Jugador.barra_exp()
+
 
 elif menu_actividad == 2: 
     hora = int(input("Cuando horas enteras has entrenado : "))
@@ -54,10 +51,10 @@ elif menu_actividad == 2:
     dur = hora*60 + min
     dist = float(input("Cuantos kilometros enteros: "))
     act = Correr(dur,"2-1-25", dist)
-    historico.registrar_actividad(act)
-    cantidad = 50
-    Jugador.ganar_exp(cantidad)
-    Jugador.barra_exp()
+    historico.registrar_actividad(act) 
+    jugador.ganar_exp(50)
+    jugador.barra_exp()
+
 
 elif menu_actividad == 3: 
     hora = int(input("Cuando horas enteras has entrenado : "))
