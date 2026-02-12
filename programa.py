@@ -28,6 +28,7 @@ if menu_inicial == 2:
 historico = Historico(usuario)
 historico.cargar_datos()
 
+
 menu_actividad = int(input
 ("1.Ciclismo\n" \
 "2.Correr\n"\
@@ -64,9 +65,11 @@ elif menu_actividad == 3:
     
     historico.registrar_actividad(act)
 elif menu_actividad == 4:
-    peso = int(input("peso: "))
-    altura = int(input("altura cm : "))
-    edad = int(input("edad: "))
+    input(historico.crear_metrica())
+    historico.guardar_metrica()
+    historico.cargar_datos_metrica()
+    
+
     
 
 
