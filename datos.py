@@ -20,6 +20,4 @@ def guardar_metrica(peso, altura, edad, imc):
 
 crear_metrica()
 
-metrica = Metrica(peso, altura, edad)
-jugador.incluir_metrica(metrica)
-metrica.guardar_datos()
+
