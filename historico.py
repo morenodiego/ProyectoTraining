@@ -5,6 +5,7 @@ import os
 from metrica import Metrica
 
 
+
 class Historico: 
     def __init__ (self,nombre): 
         self.nombre = nombre 
@@ -79,46 +80,43 @@ class Historico:
 
 
 
-    def cargar_datos_metrica(self): 
-        filename = "metricas_"+self.nombre+".txt"
+    def crear_metrica(self):
+        peso = int(input("Dime tu peso: "))
+        altura = float(input("Dime tu altura en metros: "))
+        edad = int(input("Dime tu edad: "))
+
+        metrica = Metrica(peso, altura, edad)
+        imc = metrica.calcular_imc()
+
+        print("Tu IMC es:", imc)
+
+
+
+    def guardar_metrica(self):
+
+        
+        with open("medidasmetrica.txt", "a") as archivo:
+
+            for metrica in self.metrica: 
+
+                archivo.write(f"{metrica.peso}:{metrica.altura}:{metrica.edad}:{metrica.calcular_imc()}\n")
+       
+    
+    def cargar_datos_metrica(self):
+        filename = "metrica_"+self.nombre+".txt"
         if not os.path.exists(filename):
             return 
         with open(filename, "r") as fichero: 
             for linea in fichero:
                 peso = linea.split(":")[0].strip()
-                altura = linea.split(":")[2].strip()
-                edad = linea.split(":")[3].strip()    
+                altura= linea.split(":")[1].strip()
+                edad= linea.split(":")[2].strip()
                 metrica = Metrica(peso, altura, edad)
                 self.metrica.append(metrica)
 
 
 
 
-
-    def guardar_datos_metrica(self):
-        with open("medidasmetrica.txt", "w") as fichero:
-            fichero.write(f"{self.nombre}{self.peso}:{self.altura}:{self.edad}:\n")
-
-
-    def cargar_jugador(self, usuario):
-        filename = "jugadores.txt"
-        if not os.path.exists(filename):
-            return 
-        with open(filename, "r") as fichero:
-            for linea in fichero:
-                nombre = linea.split(":")[0]
-                if nombre == usuario:
-                    experiencia = linea.split(":")[1]
-                    nivel = linea.split(":")[2]
-                    avatar = linea.split(":")[3]
-                    mascota = linea.split(":")[4]
-                    peso = linea.split(":")[5]
-                    altura = linea.split(":")[6]
-                    edad = linea.split(":")[7]
-                    jugador = Jugador(nombre, experiencia, nivel, avatar, mascota, peso, altura, edad)
-                    return jugador
-        
-            return None
 
 
     def guardar_jugadores(self):
