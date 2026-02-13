@@ -11,18 +11,27 @@ menu_inicial = int(input("1.Registrarte\n" \
 
 if menu_inicial == 1: 
     registrar()
-    menu_inicial = int(input("1.Registrarte\n" \
-    "2.Iniciar sesion\n"\
-    ": " ))
-
-if menu_inicial == 2: 
+    # Después de registrarse, pedir que inicie sesión
+    print("\nAhora inicia sesión con tu nueva cuenta")
     usuario = iniciar_sesion()
     if usuario == "":
         print("No existe un usuario así en nuestro sistema")
         exit()
+
+elif menu_inicial == 2: 
+    usuario = iniciar_sesion()
+    if usuario == "":
+        print("No existe un usuario así en nuestro sistema")
+        exit()
+
+# Cargar histórico y jugador
+if usuario:
     historico = Historico(usuario)
     historico.cargar_datos()
     jugador = historico.cargar_jugador(usuario)
+    if jugador is None:
+        print("Error: No se encontró el perfil del jugador")
+        exit()
 
 
 
@@ -44,6 +53,8 @@ if menu_actividad == 1:
     desnivel = altmax - altmin
     act = Ciclismo(dur, "2-1-25",dist,desnivel)
     historico.registrar_actividad(act)
+    jugador.ganar_exp(40)
+    print(jugador.barra_exp())
 
 
 elif menu_actividad == 2: 
@@ -54,7 +65,7 @@ elif menu_actividad == 2:
     act = Correr(dur,"2-1-25", dist)
     historico.registrar_actividad(act) 
     jugador.ganar_exp(50)
-    jugador.barra_exp()
+    print(jugador.barra_exp())
 
 
 elif menu_actividad == 3: 
@@ -66,8 +77,8 @@ elif menu_actividad == 3:
     act.entrenamiento()  # Llamar al método de entrenamiento
     
     historico.registrar_actividad(act)
-    Jugador.ganar_exp(50)
-    Jugador.barra_exp()
+    jugador.ganar_exp(50)
+    print(jugador.barra_exp())
 elif menu_actividad == 4:
     input(historico.crear_metrica())
     historico.guardar_metrica()
