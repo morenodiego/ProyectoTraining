@@ -56,7 +56,6 @@ if menu_actividad == 1:
     jugador.ganar_exp(40)
     print(jugador.barra_exp())
 
-
 elif menu_actividad == 2: 
     hora = int(input("Cuando horas enteras has entrenado : "))
     min = int(input("y cuantos mimnutos: "))
