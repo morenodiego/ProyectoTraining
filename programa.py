@@ -41,6 +41,8 @@ if usuario:
         with open("jugadores.txt", "a") as archivo:
             archivo.write(f"{usuario}:0:1:{avatar}:{mascota}:{peso}:{altura}:{edad}\n")
         jugador = historico.cargar_jugador(usuario)
+        # Guardar el primer registro de métrica
+        historico.guardar_registro_metrica(jugador.metrica)
 
 
 
@@ -88,9 +90,20 @@ elif menu_actividad == 3:
     jugador.ganar_exp(50)
     print(jugador.barra_exp())
 elif menu_actividad == 4:
-    input(historico.crear_metrica())
-    historico.guardar_metrica()
-    historico.cargar_datos_metrica()
+    print("\n--- Tu métrica actual ---")
+    print(f"Peso: {jugador.metrica.peso} kg")
+    print(f"Altura: {jugador.metrica.altura} m")
+    print(f"Edad: {jugador.metrica.edad} años")
+    print(f"IMC: {jugador.metrica.calcular_imc():.2f}")
+    
+    modificar = input("\n¿Deseas modificarla? (s/n): ")
+    if modificar.lower() == "s":
+        jugador.metrica.peso = int(input("Nuevo peso en kg: "))
+        jugador.metrica.altura = float(input("Nueva altura en metros: "))
+        jugador.metrica.edad = int(input("Nueva edad: "))
+        print(f"Métrica actualizada. Nuevo IMC: {jugador.metrica.calcular_imc():.2f}")
+        # Guardar el registro de métrica en el historial
+        historico.guardar_registro_metrica(jugador.metrica)
     
 
     

@@ -30,6 +30,13 @@ def registrar():
     # Guardar jugador en jugadores.txt
     with open("jugadores.txt", "a") as archivo:
         archivo.write(f"{usuario}:0:1:{avatar}:{mascota}:{peso}:{altura}:{edad}\n")
+    
+    # Guardar el primer registro de métrica
+    from historico import Historico
+    from metrica import Metrica
+    historico = Historico(usuario)
+    metrica = Metrica(peso, altura, edad)
+    historico.guardar_registro_metrica(metrica)
 
 
 def iniciar_sesion(): 

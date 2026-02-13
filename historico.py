@@ -77,6 +77,13 @@ class Historico:
                 elif type(actividad) == Gimnasio: 
                     fichero.write(f"{self.nombre}:gimnasio:{actividad.duracion}:{str(actividad.entreno)}\n")
 
+    def guardar_registro_metrica(self, metrica):
+        """Guarda un registro de métrica en el historial del usuario"""
+        filename = "metrica_"+self.nombre+".txt"
+        with open(filename, "a") as archivo:
+            imc = metrica.calcular_imc()
+            archivo.write(f"{metrica.peso}:{metrica.altura}:{metrica.edad}:{imc:.2f}\n")
+
 
 
 
