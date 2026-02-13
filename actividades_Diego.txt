@@ -1,3 +1,5 @@
 Diego:gimnasio:203:{}
 Diego:correr:1383:34.0
 Diego:correr:246:7.0
+Diego:correr:154:43.0
+Diego:gimnasio:273:{'Banca': '3'}

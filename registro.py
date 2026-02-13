@@ -1,6 +1,4 @@
 def registrar(): 
-    from historico import Historico
-    
     usuario = input("Dime tu nombre de usuario: ")
     contraseña = input("Ponga su contraseña: ")
 
@@ -13,7 +11,7 @@ def registrar():
                     print("Ese usuario ya existe")
                     return
     except FileNotFoundError:
-        pass  # Si el archivo no existe, es la primera vez
+        pass
 
     # Si no existe, lo guardamos
     with open("usuarios.txt", "a") as archivo:
@@ -29,12 +27,9 @@ def registrar():
     altura = float(input("¿Cuál es tu altura en metros? "))
     edad = int(input("¿Cuál es tu edad? "))
     
-    # Crear jugador y guardarlo
-    from historico import Jugador
-    jugador = Jugador(usuario, avatar, mascota, peso, altura, edad)
-    historico = Historico(usuario)
-    historico.jugadores.append(jugador)
-    historico.guardar_jugadores()
+    # Guardar jugador en jugadores.txt
+    with open("jugadores.txt", "a") as archivo:
+        archivo.write(f"{usuario}:0:1:{avatar}:{mascota}:{peso}:{altura}:{edad}\n")
 
 
 def iniciar_sesion(): 

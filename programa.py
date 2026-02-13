@@ -9,9 +9,10 @@ menu_inicial = int(input("1.Registrarte\n" \
 "2. iniciar sesion\n"\
 ": " ))
 
+# Cargar histórico y jugador
+usuario = None
 if menu_inicial == 1: 
     registrar()
-    # Después de registrarse, pedir que inicie sesión
     print("\nAhora inicia sesión con tu nueva cuenta")
     usuario = iniciar_sesion()
     if usuario == "":
@@ -24,11 +25,22 @@ elif menu_inicial == 2:
         print("No existe un usuario así en nuestro sistema")
         exit()
 
-# Cargar histórico y jugador
 if usuario:
     historico = Historico(usuario)
     historico.cargar_datos()
     jugador = historico.cargar_jugador(usuario)
+    
+    # Si no existe el jugador, crearlo ahora
+    if jugador is None:
+        print("Creando tu perfil de jugador...")
+        avatar = input("¿Qué avatar quieres? ")
+        mascota = input("¿Qué mascota quieres? ")
+        peso = int(input("¿Cuál es tu peso en kg? "))
+        altura = float(input("¿Cuál es tu altura en metros? "))
+        edad = int(input("¿Cuál es tu edad? "))
+        with open("jugadores.txt", "a") as archivo:
+            archivo.write(f"{usuario}:0:1:{avatar}:{mascota}:{peso}:{altura}:{edad}\n")
+        jugador = historico.cargar_jugador(usuario)
 
 
 
@@ -89,3 +101,8 @@ elif menu_actividad == 4:
 
 
 historico.guardad_datos()
+
+# Guardar el jugador actualizado
+if jugador:
+    historico.jugadores.append(jugador)
+    historico.guardar_jugadores()

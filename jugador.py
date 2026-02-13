@@ -1,6 +1,6 @@
 from metrica import Metrica
 class Jugador:
-    def __init__(self, usuario, experiencia, nivel, avatar, mascota, peso, altura, edad):
+    def __init__(self, usuario, avatar, mascota, peso, altura, edad):
         self.usuario = usuario
         self.exp = 0
         self.exp_max=100
