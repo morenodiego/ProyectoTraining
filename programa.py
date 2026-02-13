@@ -29,9 +29,6 @@ if usuario:
     historico = Historico(usuario)
     historico.cargar_datos()
     jugador = historico.cargar_jugador(usuario)
-    if jugador is None:
-        print("Error: No se encontró el perfil del jugador")
-        exit()
 
 
 

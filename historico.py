@@ -126,6 +126,30 @@ class Historico:
             for jugador in self.jugadores:
                 fichero.write(f"{jugador.usuario}:{jugador.exp}:{jugador.nivel}:{jugador.avatar}:{jugador.mascota}:{jugador.metrica.peso}:{jugador.metrica.altura}:{jugador.metrica.edad}\n")
 
+    def cargar_jugador(self, usuario):
+        """Carga un jugador del archivo jugadores.txt
+        Devuelve: objeto Jugador si existe, None si no existe"""
+        if not os.path.exists("jugadores.txt"):
+            return None
+        with open("jugadores.txt", "r") as fichero:
+            for linea in fichero:
+                partes = linea.strip().split(":")
+                if len(partes) >= 8 and partes[0] == usuario:
+                    usuario_guardado = partes[0]
+                    exp = int(partes[1])
+                    nivel = int(partes[2])
+                    avatar = partes[3]
+                    mascota = partes[4]
+                    peso = int(partes[5])
+                    altura = float(partes[6])
+                    edad = int(partes[7])
+                    
+                    jugador = Jugador(usuario_guardado, avatar, mascota, peso, altura, edad)
+                    jugador.exp = exp
+                    jugador.nivel = nivel
+                    return jugador
+        return None
+
 
 class Jugador:
     def __init__(self, usuario, avatar, mascota, peso, altura, edad):

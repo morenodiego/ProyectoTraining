@@ -1,2 +1,0 @@
-Diego:50:5:perro:dragon:70:175:25
-Hector:75:1:gato:unicornio:60:178:17
