@@ -16,13 +16,13 @@ class Historico:
     def registrar_actividad(self, actividad):
         print(type(actividad))
         if type(actividad) == Ciclismo:
-            Jugador.ganar_exp(50)
+            
             self.actividades.append(actividad)
         elif type(actividad) == Correr:
-            Jugador.ganar_exp(50)
+            
             self.actividades.append(actividad)
         elif type(actividad) == Gimnasio:
-            Jugador.ganar_exp(50)
+            
             self.actividades.append(actividad)
 
 

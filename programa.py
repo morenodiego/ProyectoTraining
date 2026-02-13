@@ -20,13 +20,11 @@ if menu_inicial == 2:
     if usuario == "":
         print("No existe un usuario así en nuestro sistema")
         exit()
+    historico = Historico(usuario)
+    historico.cargar_datos()
+    jugador = historico.cargar_jugador(usuario)
 
-    
-    
 
-
-historico = Historico(usuario)
-historico.cargar_datos()
 
 
 menu_actividad = int(input
@@ -47,13 +45,17 @@ if menu_actividad == 1:
     act = Ciclismo(dur, "2-1-25",dist,desnivel)
     historico.registrar_actividad(act)
 
+
 elif menu_actividad == 2: 
     hora = int(input("Cuando horas enteras has entrenado : "))
     min = int(input("y cuantos mimnutos: "))
     dur = hora*60 + min
     dist = float(input("Cuantos kilometros enteros: "))
     act = Correr(dur,"2-1-25", dist)
-    historico.registrar_actividad(act)
+    historico.registrar_actividad(act) 
+    jugador.ganar_exp(50)
+    jugador.barra_exp()
+
 
 elif menu_actividad == 3: 
     hora = int(input("Cuando horas enteras has entrenado : "))
@@ -64,6 +66,8 @@ elif menu_actividad == 3:
     act.entrenamiento()  # Llamar al método de entrenamiento
     
     historico.registrar_actividad(act)
+    Jugador.ganar_exp(50)
+    Jugador.barra_exp()
 elif menu_actividad == 4:
     input(historico.crear_metrica())
     historico.guardar_metrica()
