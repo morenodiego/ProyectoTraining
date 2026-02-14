@@ -100,12 +100,8 @@ class Historico:
 
 
     def guardar_metrica(self):
-
-        
         with open("medidasmetrica.txt", "a") as archivo:
-
             for metrica in self.metrica: 
-
                 archivo.write(f"{metrica.peso}:{metrica.altura}:{metrica.edad}:{metrica.calcular_imc()}\n")
        
     
@@ -147,7 +143,7 @@ class Historico:
                     nivel = int(partes[2])
                     avatar = partes[3]
                     mascota = partes[4]
-                    peso = int(partes[5])
+                    peso = float(partes[5])
                     altura = float(partes[6])
                     edad = int(partes[7])
                     

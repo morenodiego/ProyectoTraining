@@ -33,11 +33,6 @@ class Gimnasio (Actividad):
         super().__init__(duracion, hora)
         self.entreno = {}
 
-
-
-
-
-
     
     def entrenamiento(self):
         menu = int(input("1. Añadir un nuevo ejercicio\n"  "2. Salir \n : "))
@@ -47,6 +42,9 @@ class Gimnasio (Actividad):
             self.entreno[ejercicio] = series 
         
             menu = int(input("1. Añadir un nuevo ejercicio\n"  "2. Salir \n : "))
+
+            if menu == 2: 
+                break
         else: 
             pass 
         

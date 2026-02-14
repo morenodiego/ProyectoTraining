@@ -64,7 +64,10 @@ if menu_actividad == 1:
     desnivel = altmax - altmin
     act = Ciclismo(dur, "2-1-25",dist,desnivel)
     historico.registrar_actividad(act)
-    jugador.ganar_exp(40)
+    if dist >= 50: 
+        jugador.ganar_exp(60)
+    else:
+        jugador.ganar_exp(40)
     print(jugador.barra_exp())
 
 elif menu_actividad == 2: 
@@ -74,7 +77,13 @@ elif menu_actividad == 2:
     dist = float(input("Cuantos kilometros enteros: "))
     act = Correr(dur,"2-1-25", dist)
     historico.registrar_actividad(act) 
-    jugador.ganar_exp(50)
+    if dist >= 42: 
+        jugador.ganar_exp(100)
+
+    elif dist >= 21:
+        jugador.ganar_exp(50)
+    else:
+        jugador.ganar_exp(40)
     print(jugador.barra_exp())
 
 
@@ -87,8 +96,14 @@ elif menu_actividad == 3:
     act.entrenamiento()  # Llamar al método de entrenamiento
     
     historico.registrar_actividad(act)
-    jugador.ganar_exp(50)
+    if dur >= 60:
+        jugador.ganar_exp(50)
+    elif dur >= 45:
+        jugador.ganar_exp(30)
+    else:
+        jugador.ganar_exp(20)
     print(jugador.barra_exp())
+
 elif menu_actividad == 4:
     print("\n--- Tu métrica actual ---")
     print(f"Peso: {jugador.metrica.peso} kg")
@@ -98,7 +113,7 @@ elif menu_actividad == 4:
     
     modificar = input("\n¿Deseas modificarla? (s/n): ")
     if modificar.lower() == "s":
-        jugador.metrica.peso = int(input("Nuevo peso en kg: "))
+        jugador.metrica.peso = float(input("Nuevo peso en kg: "))
         jugador.metrica.altura = float(input("Nueva altura en metros: "))
         jugador.metrica.edad = int(input("Nueva edad: "))
         print(f"Métrica actualizada. Nuevo IMC: {jugador.metrica.calcular_imc():.2f}")
