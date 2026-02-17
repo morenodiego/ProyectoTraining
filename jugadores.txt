@@ -1,1 +1,1 @@
-Diego:50:3:Maduro:Gato:78.0:1.88:18
+Diego:50:3:Maduro:Gato:78.9:1.87:19
